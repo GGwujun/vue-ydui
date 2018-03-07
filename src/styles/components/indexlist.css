@@ -1,0 +1,136 @@
+/**
+ * Component:	Variables
+ * Description:	Define all variables
+*/
+.yd-indexlist {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.yd-indexlist-tab {
+  display: flex;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  margin-top: -50%;
+  z-index: 999999;
+}
+.yd-indexlist-tab-item {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.yd-indexlist-tab-item > li {
+  padding: 0 .2rem;
+  font-size: .28rem;
+  display: inline-block;
+  position: relative;
+  height: .7rem;
+  line-height: .7rem;
+}
+.yd-indexlist-tab-item > li.yd-indexlist-current {
+  color: currentColor !important;
+}
+.yd-indexlist-tab-item > li.yd-indexlist-current > i {
+  width: .32rem;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: .5px;
+  display: flex;
+  align-items: center;
+}
+.yd-indexlist-tab-item > li.yd-indexlist-current > i:before {
+  content: '\E651';
+  font-family: 'YDUI-INLAY';
+  font-size: .32rem;
+  line-height: 1;
+}
+.yd-indexlist-tab-item > li > span {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.yd-indexlist-toggle {
+  width: 1rem;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.yd-indexlist-toggle:after {
+  content: '\E68C';
+  font-family: 'YDUI-INLAY';
+  display: block;
+  transform: rotate(0deg);
+  transition: transform .08s linear;
+  font-size: .32rem;
+  color: currentColor;
+}
+.yd-indexlist-toggle-active:after {
+  transform: rotate(180deg);
+}
+.yd-indexlist-unfold {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  top: 0;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(0, -100%);
+  transition: all .08s linear;
+}
+.yd-indexlist-unfold-active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.yd-indexlist-unfold-header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+}
+.yd-indexlist-unfold-header > div {
+  flex: 1;
+  padding-left: .3rem;
+  font-size: .28rem;
+  color: #333;
+}
+.yd-indexlist-unfold-header > span {
+  width: 1rem;
+}
+.yd-indexlist-unfold > ul {
+  pointer-events: auto;
+  overflow: hidden;
+  padding-bottom: .2rem;
+  padding-top: .2rem;
+}
+.yd-indexlist-unfold > ul > li {
+  float: left;
+  width: 33.333%;
+  padding-left: .3rem;
+  line-height: .7rem;
+  font-size: .28rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.yd-indexlist-unfold > ul > li.yd-indexlist-current {
+  color: currentColor !important;
+}
+.yd-indexlist-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
